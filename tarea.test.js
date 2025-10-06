@@ -14,4 +14,12 @@ describe('Gestor de Tareas', () => {
         expect(response.statusCode).toBe(200);
         expect(Array.isArray(response.body)).toBe(true);
     });
+
+    it('debería obtener una tarea por ID', async () => {
+        const newTaskResponse = await request(app).post('/tareas').send({ nombre: 'Tarea 2', completada: false });
+        const response = await request(app).get(`/tareas/${newTaskResponse.body.id}`);
+        expect(response.statusCode).toBe(200);
+        expect(response.body.nombre).toBe('Tarea 2');
+        expect(response.body.completada).toBe(false);
+    });
 });
