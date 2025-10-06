@@ -1,0 +1,14 @@
+{
+  "name": "gestor-tareas-con-test",
+  "version": "1.0.0",
+  "description": "Gestor de Tareas application",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^27.0.0"
+  },
+  "license": "MIT"
+}
