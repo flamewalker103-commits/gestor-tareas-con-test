@@ -6,6 +6,7 @@ describe('Gestor de Tareas', () => {
         const response = await request(app).post('/tareas').send({ nombre: 'Tarea 1', completada: false });
         expect(response.statusCode).toBe(201);
         expect(response.body.nombre).toBe('Tarea 1');
+        expect(response.body.completada).toBe(false);
     });
 
     it('debería listar las tareas', async () => {
