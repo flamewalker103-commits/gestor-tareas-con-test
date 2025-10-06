@@ -7,8 +7,8 @@ describe('Gestor de Tareas', () => {
         expect(response.statusCode).toBe(201);
         expect(response.body.nombre).toBe('Tarea 1');
     });
-    
-it('debería listar las tareas', async () => {
+
+    it('debería listar las tareas', async () => {
         const response = await request(app).get('/tareas');
         expect(response.statusCode).toBe(200);
         expect(Array.isArray(response.body)).toBe(true);
